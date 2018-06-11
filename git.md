@@ -15,7 +15,7 @@
 
 现在是第二天的下午，稍微有了点气力的我决定继续写下去。
 
-1. Configuration
+## Configuration
 
 首先让我们完成密码学上的配置，这一步是和Git服务器安全通信的基础。而且可让我免于输入用户名和密码。
 
@@ -39,7 +39,7 @@ git config --global user.email "reehccheer@gmail.com"
 git config --global user.name "deprecatedtragedy"
 ```
 
-2. Workflow
+## Workflow
 
 我们还是先在Github上新建一个仓库！
 
@@ -75,7 +75,7 @@ git reset --hard 7f123
 
 譬如我们...就不展开讲了。Google和Stackoverflow是你的好朋友。
 
-#### 再看一看Git吧：
+## 有用的Git教程！
 
-[Schaepher: Git和Github简单教程](http://www.cnblogs.com/schaepher/p/5561193.html)
-[Git Tips](https://github.com/git-tips/tips)
++ [Schaepher: Git和Github简单教程](http://www.cnblogs.com/schaepher/p/5561193.html)
++ [Git Tips](https://github.com/git-tips/tips)
