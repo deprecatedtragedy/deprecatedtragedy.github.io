@@ -20,5 +20,5 @@
 
 2. [analysing-usb-traffic](https://osqa-ask.wireshark.org/questions/11054/analysing-usb-traffic)
 
-3. [USB on wikipedia](https://en.wikipedia.org/wiki/USB
+3. [USB on wikipedia](https://en.wikipedia.org/wiki/USB)
 
