@@ -22,3 +22,4 @@
 
 3. [USB on wikipedia](https://en.wikipedia.org/wiki/USB)
 
+4. [USB in a NutShell](https://www.beyondlogic.org/usbnutshell/usb1.shtml)
