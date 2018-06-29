@@ -1,7 +1,5 @@
 # Emacs
 
-## With Lisp
-
 ### Reference
 - [ErgoEmacs](http://ergoemacs.org/)
 
@@ -14,6 +12,22 @@ or
 Input A Statement like: (message "Hello Emacs!")
 `C-j`
 
-### Also
+### Configure Path
 
-- [Emacs Lisp 简明教程](http://smacs.github.io/elisp/)
+[Fonts!](https://github.com/potyt/fonts)
+[awesome emacs](https://github.com/emacs-tw/awesome-emacs)
+
+```
+(global-set-key (kbd "<f9>" 'linum-mode)
+```
+
+```
+(set-default-font "Monaco")
+(set-fontset-font t 'han (font-spec :family "STHeiti"))
+```
+
+## Python
+
+[Python & Emacs](https://realpython.com/emacs-the-best-python-editor/)
+
+Really tired !
