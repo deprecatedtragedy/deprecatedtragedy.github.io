@@ -31,3 +31,11 @@ Input A Statement like: (message "Hello Emacs!")
 [Python & Emacs](https://realpython.com/emacs-the-best-python-editor/)
 
 Really tired !
+
+## Emacs 26.1!
+
+[Compile](https://lixingcong.github.io/2016/04/19/compile-emacs-on-linux/)
+
+## Ruby
+
+[Ruby & Emacs](https://worace.works/2016/06/07/getting-started-with-emacs-for-ruby/)

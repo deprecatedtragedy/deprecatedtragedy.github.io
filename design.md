@@ -8,5 +8,9 @@ I finished it with GIMP. GIMP is really prone to stuck and crash...
 
 ![Poster 01](design/poster01.jpg)
 
+# Begin with Inkscape
+
+![Poster 02](design/poster01.png)
+
 
 
