@@ -14,24 +14,25 @@
   '(better-defaults
     material-theme
     neotree
-    elpy
-    flycheck))
+;    elpy
+;    flycheck
+    ))
 
 (mapc #'(lambda (package)
   (unless (package-installed-p package)
     (package-install package)))
     sugars)
 
-(elpy-enable)
-(when (require 'flycheck nil t)
-  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
-  (add-hook 'elpy-mode-hook 'flycheck-mode))
+;(elpy-enable)
+;(when (require 'flycheck nil t)
+;  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+;  (add-hook 'elpy-mode-hook 'flycheck-mode))
 (require 'better-defaults)
 (load-theme 'material t)
 (setq inhibit-startup-message t)
 
 (global-set-key (kbd "<f8>") 'neotree-toggle)
-(global-set-key (kbd "<f9>") 'global-display-line-numbers-mode)
+(global-set-key (kbd "<f9>") 'display-line-numbers-mode)
 (global-display-line-numbers-mode)
 
 (setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
