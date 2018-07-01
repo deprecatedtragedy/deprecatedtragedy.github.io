@@ -79,3 +79,18 @@ git reset --hard 7f123
 
 + [Schaepher: Git和Github简单教程](http://www.cnblogs.com/schaepher/p/5561193.html)
 + [Git Tips](https://github.com/git-tips/tips)
+
+## 有分支啦!
+
+多台终端操作同一个仓库而没有用到分支真的会让人难受. 
+
+```
+git checkout -b [branch-name]
+git branch
+``` 
+
+```
+git push -u origin [branch-name]
+```
+
+
