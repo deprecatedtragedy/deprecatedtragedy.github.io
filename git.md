@@ -93,4 +93,7 @@ git branch
 git push -u origin [branch-name]
 ```
 
-
+```
+git merge [branch-name]
+git push
+```
