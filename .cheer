@@ -1,13 +1,10 @@
 ;; cheer's Emacs !
 ;; start with emacs -q --load .cheer
 
-
-(require 'package)
 (setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
                          ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
 (package-initialize)
-
-(when (not package-archive-contents)
+(unless package-archive-contents
   (package-refresh-contents))
 
 (defvar sugars
@@ -29,7 +26,10 @@
 ;  (add-hook 'elpy-mode-hook 'flycheck-mode))
 (require 'better-defaults)
 (load-theme 'material t)
-(setq inhibit-startup-message t)
+(setq
+  inhibit-startup-message t
+  initial-scratch-message nil)
+(setq initial-major-mode 'ruby-mode)
 
 (global-set-key (kbd "<f8>") 'neotree-toggle)
 (global-set-key (kbd "<f9>") 'display-line-numbers-mode)
@@ -44,4 +44,9 @@
 
 (custom-set-faces
  '(line-number ((t (:inherit (shadow default) :foreground "hot pink" :family "Jockey One")))))
+
+(add-to-list 'auto-mode-alist '("\\.rb\\'" . ruby-mode))
+(global-set-key (kbd "M-p") (lambda () (interactive) (shell-command "make")))
+(add-hook 'ruby-mode-hook
+          (lambda () (local-set-key (kbd "M-p") (lambda () (interactive) (shell-command (message "ruby %S" (buffer-file-name)))))))
 
