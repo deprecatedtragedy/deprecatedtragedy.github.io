@@ -32,4 +32,28 @@ for position in positions:
     frame_num += 50
 ```
 
+### 下一步
+
+由于Blender下的Python体验不太好，我有必要把我需要的基本操作列出来，然后查阅这些基本操作的使用方法，从而缩短我的制作周期。那么，我所需要的基本操作是：
+
++ Object Generate & Destroy
++ Object Position & Rotation & Scale
++ Attached Material Change
++ Keyframe
+
+### COSMOS
+
+OK, my first animation start!
+
+Description: 
+
++ Weightless Camera Movement
+  - A 3-dim Vector Speed
+  - Rotaion Around Itself
+  - Time Gap Re-Random
++ Galaxy Generation
+  - Moving Balls And Transparent Lights
+  - Extraordinary Material !
+
+For now !
 
