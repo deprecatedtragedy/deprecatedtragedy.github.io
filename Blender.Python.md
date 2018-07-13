@@ -57,3 +57,25 @@ Description:
 
 For now !
 
+### 困境
+
+我只有那天花了时间做这件事，之后就好像丧失兴趣了。原因如下。
+
++ 初版不符合预想效果，做不下去了。
++ 对作品持有的信念不强大。
++ 没有考虑到这种情形。
++ 懒惰。
+
+当我反思过后，我有一种强烈的感觉，那就是我必须完成它。
+
+Develop my skill and develop my mind.
+
+### COSMOS V2
+
+Restart.
+
+1. Learn Material
+2. One Object with lights and a sticked camera ANIMATION
+
+To be continue...
+

@@ -1,6 +1,7 @@
 ###### [1](1.md)
 ###### [6.22](6.22.md)
 ###### [automata](automata.md)
+###### [black.magic](black.magic.md)
 ###### [Blender.Python](Blender.Python.md)
 ###### [cheer](cheer.md)
 ###### [design](design.md)
