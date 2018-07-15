@@ -12,5 +12,9 @@ I finished it with GIMP. GIMP is really prone to stuck and crash...
 
 ![Poster 02](design/poster01.png)
 
+![Poster on 15.July](design/poster715.png)
+
+自己下手的时候头脑空空，这就是没有天赋吗？
+
 
 
