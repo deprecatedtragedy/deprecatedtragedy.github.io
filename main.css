@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+SC|Noto+Serif+TC&subset=chinese-simplified,chinese-traditional,japanese');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Cinzel');
+
+html, body {
+    height: 100%;
+    margin: 0;
+    background: #2b3236;
+}
+
+.link:hover {
+    cursor: pointer;
+}
+
+#header {
+    position: fixed;
+    width: 100%;
+    background: pink;
+    z-index: 1;
+    background: #2b3236;
+    color: #ffffff;
+}
+
+#header ul {
+    display: flex;
+    justify-content: flex-end;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#header ul li {
+    display: block;
+    text-transform: uppercase;
+    margin-right: 50px;
+    transition: all 0.7s ease-out;
+}
+
+#header ul li:hover {
+    color: #e96e6e;
+    cursor: pointer;
+}
+
+#header ul li::before {
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #ffffff;
+    content: "";
+    visibility: hidden;
+}
+
+#header ul .target::before {
+    visibility: visible;
+}
+
+#footer {
+    position: fixed;
+    bottom: 20px;
+    width: 77%;
+
+    /* MAGIC */
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: #e96e6e;
+    color: #ffffff;
+    z-index: 1;
+}
+
+#footer p {
+    margin: 7px;
+    text-align: center;
+    font-size: 1em;
+    font-family: 'Cinzel', serif;
+}
+
+#content {
+    width: 77%;
+    
+    position: relative;
+    /* MAGIC */
+    left: 50%;
+    transform: translateX(-50%);
+
+    height: 100%;    
+    background: #2b3236;
+    color: #ffffff;
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.2em;
+}
+
+::selection {
+    background: #2b3236;
+}
+
+#content div {
+    letter-spacing: .07em;
+    margin-bottom: 200px;
+}
+
+/* width */
+::-webkit-scrollbar {
+    display: none;
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #2b3236;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #aaaaaa;
+    border-radius: 4px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #e96e6e; 
+  }
