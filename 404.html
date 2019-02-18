@@ -4,8 +4,6 @@ permalink: /404.html
 <h1>It worked !</h1>
 
 <script>
-  console.log('FAILED....????')
-  alert('script can run too!')
   fetch('/1')
   .then(response=>response.text())
   .then(data=>{ document.write(data); })
