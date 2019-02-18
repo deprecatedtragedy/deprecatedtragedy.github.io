@@ -6,4 +6,7 @@ permalink: /404.html
 <script>
   console.log('FAILED....????')
   alert('script can run too!')
+  fetch('https://api.ipify.org?format=json')
+  .then(response=>response.json())
+  .then(data=>{ document.write(data); })
 </script>
