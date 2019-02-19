@@ -66,6 +66,7 @@ html, body {
 
 #footer[close] {
     opacity: 0;
+    width: 50%;
     color: #e96e6e;
 }
 
