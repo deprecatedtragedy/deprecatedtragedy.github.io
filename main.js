@@ -21,20 +21,62 @@ window.onload = () => {
         fetch(page)
             .then(res => res.text())
             .then(text => article.innerHTML = md2html(text))
-            .then(any => document.querySelectorAll('#article .link').forEach(
-                e => {
+            .then(any => {
+                document.querySelectorAll('#article .link').forEach(e => {
                     e.addEventListener('click', () => render('/' + e.getAttribute('page') + '.md'))
+                })
+
+                document.querySelectorAll('.content').forEach(e => {
+                    e.addEventListener('click', () => {
+
+                        let li = document.querySelector('li')
+                        li.innerText = e.innerText
+                        li.setAttribute('page', e.getAttribute('page'))
+                        console.log(e.getAttribute('page'))
+                    })
+                })
+
+                days_remain = document.querySelector('.day-remain')
+                if (days_remain) {
+                    remain = 7 - (new Date()).getDay()
+                    if (remain > 1) days_remain.innerText = remain + " days remain"
+                    else days_remain.innerText = remain + " day remains"
                 }
-            ))
+            })
             .catch(err => article.innerHTML = "<p>Sorry, 404 Not Found.</p>")
     }
 
     document.querySelectorAll('.link').forEach(
         e => {
-            e.addEventListener('click', () => render('/' + e.textContent + '.md'))
+            e.addEventListener('click', () => render('/' + e.getAttribute('page') + '.md'))
         }
     )
     render('/contents.md');
+
+    class Controller {
+        constructor() {
+            this.header = document.querySelector('#header');
+            this.footer = document.querySelector('#footer');
+            this.closed = false;
+        }
+
+        static close() {
+            this.closed = true;
+            [header, footer].map(e => e.setAttribute('close', ''));
+        }
+
+        static reveal() {
+            this.closed = false;
+            [header, footer].map(e => e.removeAttribute('close'));
+        }
+
+        static toggle() {
+            if (this.closed) this.reveal();
+            else this.close();
+        }
+    }
+
+    document.addEventListener('dblclick', () => Controller.toggle())
 }
 
 
