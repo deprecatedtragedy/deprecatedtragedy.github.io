@@ -18,10 +18,12 @@ window.onload = () => {
     })
 
     var render = page => {
+        article.classList.add('hiding')
         fetch(page)
             .then(res => res.text())
             .then(text => article.innerHTML = md2html(text))
             .then(any => {
+                article.classList.remove('hiding')
                 document.querySelectorAll('#article .link').forEach(e => {
                     e.addEventListener('click', () => render('/' + e.getAttribute('page') + '.md'))
                 })
@@ -32,7 +34,6 @@ window.onload = () => {
                         let li = document.querySelector('li')
                         li.innerText = e.innerText
                         li.setAttribute('page', e.getAttribute('page'))
-                        console.log(e.getAttribute('page'))
                     })
                 })
 
