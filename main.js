@@ -2,12 +2,6 @@ window.onload = () => {
 
     var article = document.querySelector('#article')
 
-    var md2html = md => {
-        md = md.replace(/\n\n/g, '<br/>')
-        md = md.replace(/\r\n\r\n/g, '<br/>')
-        return md;
-    }
-
     var toggleSelection = selection => {
         document.querySelector('.target').classList.remove('target')
         document.querySelectorAll('li').forEach(e => { if (e.textContent === selection) e.classList.add('target') })
@@ -21,19 +15,21 @@ window.onload = () => {
         article.classList.add('hiding')
         fetch(page)
             .then(res => res.text())
-            .then(text => article.innerHTML = md2html(text))
+            .then(text => article.innerHTML = text)
             .then(any => {
                 article.classList.remove('hiding')
                 document.querySelectorAll('#article .link').forEach(e => {
-                    e.addEventListener('click', () => render('/' + e.getAttribute('page') + '.md'))
+                    e.addEventListener('click', () => {
+                        render('/' + e.getAttribute('page') + '.html')
+                    })
                 })
 
                 document.querySelectorAll('.content').forEach(e => {
                     e.addEventListener('click', () => {
-
                         let li = document.querySelector('li')
                         li.innerText = e.innerText
                         li.setAttribute('page', e.getAttribute('page'))
+                        toggleSelection(li.textContent)
                     })
                 })
 
@@ -49,10 +45,10 @@ window.onload = () => {
 
     document.querySelectorAll('.link').forEach(
         e => {
-            e.addEventListener('click', () => render('/' + e.getAttribute('page') + '.md'))
+            e.addEventListener('click', () => render('/' + e.getAttribute('page') + '.html'))
         }
     )
-    render('/contents.md');
+    render('/contents.html');
 
     class Controller {
         constructor() {
@@ -79,7 +75,7 @@ window.onload = () => {
 
     document.addEventListener('dblclick', () => Controller.toggle())
 
-// following codes are copied.
+    // following codes are copied.
 
     document.addEventListener('touchstart', handleTouchStart, false);
     document.addEventListener('touchmove', handleTouchMove, false);
@@ -115,7 +111,7 @@ window.onload = () => {
                 console.log('left')
                 if (document.querySelector('li').classList.contains('target')) {
                     toggleSelection('about')
-                    render('/about.md')
+                    render('/about.html')
                 }
             } else {
                 /* right swipe */
