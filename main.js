@@ -39,6 +39,13 @@ window.onload = () => {
                     if (remain > 1) days_remain.innerText = remain + " days remain"
                     else days_remain.innerText = remain + " day remains"
                 }
+
+                if (page === '/spotify.html') {
+                    iframes = document.querySelectorAll('iframe')
+                    theOne = Math.floor(Math.random() * iframes.length)
+                    iframes.forEach(e => e.classList.add('hiding'))
+                    iframes[theOne].classList.remove('hiding')
+                }
             })
             .catch(err => article.innerHTML = "<p>Sorry, 404 Not Found.</p>")
     }
@@ -117,7 +124,7 @@ window.onload = () => {
                 /* right swipe */
                 if (!document.querySelector('li').classList.contains('target')) {
                     toggleSelection(document.querySelector('li').textContent)
-                    render('/' + document.querySelector('li').getAttribute('page') + '.md')
+                    render('/' + document.querySelector('li').getAttribute('page') + '.html')
                 }
             }
         } else {
