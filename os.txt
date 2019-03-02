@@ -1,0 +1,65 @@
+ARCH LINUX
+
+INSTALL
+https://www.viseator.com/2017/05/17/arch_install/
+
+INSTALL YAOURT
+https://www.tecmint.com/install-yaourt-in-arch-linux/
+
+[SOLVED] PGP signature could not be verified!
+https://bbs.archlinux.org/viewtopic.php?id=191629
+gpg --recv-keys <somekey>
+
+Segfault in grub-install
+https://bbs.archlinux.org/viewtopic.php?id=148101
+
+Grub legacy (0.9x) supports ext2 and ext3 (ext3 is backward compatible with ext2) but not ext4 
+https://unix.stackexchange.com/questions/41729/ext4-support-in-grub-0-9x-legacy-and-grub-1-9x-grub2
+
+MINIMAL USER CREATION
+> useradd red
+> passwd red
+> visudo and append 'red ALL=(ALL) ALL'
+
+UBUNTU
+
+How to install gcc-3.4
+	/etc/apt/sources.list:
+    deb     [trusted=yes] http://old-releases.ubuntu.com/ubuntu/ hardy universe
+    deb-src [trusted=yes] http://old-releases.ubuntu.com/ubuntu/ hardy universe
+	But ...
+
+Create a OS with GRUB.
+
+Similiar tutorials:
+	https://os.phil-opp.com/multiboot-kernel/
+
+1. create a image:
+
+dd if=/dev/zero of=<filename> bs=1k count=<how many kb you want>
+
+2. partition:
+
+fdisk <filename>
+(A DOS partition is created automatically)
+type n and press enter to create a partition, leave everything default.
+type p and press enter to check out info.
+type w and press enter to write through.
+type q and press enter to quit.
+
+3. formatting:
+losetup -o 2048*512(=1048576) /dev/loop0 <filename>
+mkfs.ext3 /dev/loop0
+losetup -d /dev/loop0
+
+4. install grub
+losetup -o /dev/loop0 <filename>
+grub-install staff
+losetup -d /dev/loop0
+
+5. OS structure
+
+6. Launch OS !
+qemu-system-i386 -rom <filename>
+
+
