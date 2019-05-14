@@ -17,6 +17,9 @@ window.onload = () => {
             .then(res => res.text())
             .then(text => article.innerHTML = text)
             .then(any => {
+
+                localStorage.nanacheer = page;
+
                 article.classList.remove('hiding')
                 document.querySelectorAll('#article .link').forEach(e => {
                     e.addEventListener('click', () => {
@@ -55,7 +58,6 @@ window.onload = () => {
             e.addEventListener('click', () => render('/' + e.getAttribute('page') + '.html'))
         }
     )
-    render('/contents.html');
 
     class Controller {
         constructor() {
@@ -138,6 +140,19 @@ window.onload = () => {
         xDown = null;
         yDown = null;
     };
+
+
+    // Let Reload Stay
+    // Bug: reload at about tab, just let it be...
+    if (localStorage) {
+        if (localStorage.nanacheer) {
+            render(localStorage.nanacheer);
+        } else {
+            render("/contents.html");
+        }
+    } else {
+        render("/contents.html")
+    }
 }
 
 
